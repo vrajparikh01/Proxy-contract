@@ -1,13 +1,22 @@
-# Sample Hardhat Project
+# Basic Information 
+This is a sample proxy contract.
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+A proxy pattern introduces upgradability for contracts by allowing users to change the target address inside the proxy contract.
 
-Try running some of the following tasks:
+Proxy contract is a contract which delegates calls to another contract. Users go through the proxy, and the proxy knows which contract to delegate the call to.
 
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/upgrade.js
-```
+First, the proxy contract is pointing to Box implementation contract.
+After running the upgrade script, the proxy contract will point to BoxV2 contract
+
+## Quick start
+Clone the repository and install all the packages
+
+``` git clone https://github.com/vrajparikh01/Proxy-contract ```
+
+``` npm install ```
+
+## Deployment
+To deploy all the contracts and upgrade the proxy, run the following command
+
+``` npx hardhat run scripts/upgrade.js ```
+
